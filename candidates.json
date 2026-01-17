@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Max Mustermann",
+    "role": "Listenplatz 1",
+    "teaser": "Kurzer Satz als Vorschau.",
+    "text": "Längerer Text über die Person.\nZweiter Absatz möglich.",
+    "photo": "img/max.jpg"
+  }
+]
