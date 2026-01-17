@@ -34,7 +34,6 @@ grid.innerHTML = data
   .map(c => {
     const fullName = `${c.vorname ?? ""} ${c.nachname ?? ""}`.trim();
     const themen = Array.isArray(c.fokusthemen) ? c.fokusthemen : [];
-
     return `
       <article class="card">
         <img class="avatar" src="${c.photo}" alt="Foto von ${fullName}" loading="lazy">
