@@ -28,26 +28,49 @@
       const res = await fetch("candidates.json", { cache: "no-store" });
       const data = await res.json();
       const grid = document.getElementById("grid");
+grid.innerHTML = data
+  .slice()
+  .sort((a, b) => (a.listenplatz ?? 9999) - (b.listenplatz ?? 9999))
+  .map(c => {
+    const fullName = `${c.vorname ?? ""} ${c.nachname ?? ""}`.trim();
+    const themen = Array.isArray(c.fokusthemen) ? c.fokusthemen : [];
 
-      grid.innerHTML = data.map(c => `
-        <article class="card">
-          <img class="avatar" src="${c.photo}" alt="Foto von ${c.name}" loading="lazy">
-          <div class="cardBody">
-            <h2 class="name">${c.name}</h2>
-            ${c.role ? `<p class="meta">${c.role}</p>` : ""}
-            ${c.teaser ? `<p class="teaser">${c.teaser}</p>` : ""}
+    return `
+      <article class="card">
+        <img class="avatar" src="${c.photo}" alt="Foto von ${fullName}" loading="lazy">
 
-            <details class="details">
-              <summary>Mehr über ${c.name}</summary>
-              <div class="detailsInner">
-                <p>${(c.text || "").replaceAll("\n", "<br>")}</p>
-              </div>
-            </details>
-          </div>
-        </article>
-      `).join("");
-    }
-    loadCandidates();
-  </script>
-</body>
-</html>
+        <div class="cardBody">
+          <div class="slot">Listenplatz ${c.listenplatz ?? ""}</div>
+          <h2 class="name">${fullName}</h2>
+          ${c.beruf ? `<p class="job">${c.beruf}</p>` : ""}
+
+          <details class="details">
+            <summary>Mehr anzeigen</summary>
+
+            <div class="detailsInner">
+              ${c.alter ? `<p class="line"><strong>Alter:</strong> ${c.alter} Jahre</p>` : ""}
+
+              ${themen.length ? `
+                <div class="block">
+                  <div class="label">Fokusthemen</div>
+                  <div class="tags">
+                    ${themen.map(t => `<span class="tag">${t}</span>`).join("")}
+                  </div>
+                </div>
+              ` : ""}
+
+              ${c.ueberMich ? `
+                <div class="block">
+                  <div class="label">Über mich</div>
+                  <p class="about">${String(c.ueberMich).replaceAll("\n", "<br>")}</p>
+                </div>
+              ` : ""}
+            </div>
+          </details>
+        </div>
+      </article>
+    `;
+  })
+  .join("");
+
+     
