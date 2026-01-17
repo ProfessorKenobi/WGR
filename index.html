@@ -5,71 +5,144 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Gemeinderatswahl – Kandidat:innen</title>
   <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Vorstellung der Kandidatinnen und Kandidaten zur Gemeinderatswahl." />
 </head>
 
 <body>
-  <header class="container header">
-    <h1>Gemeinderatswahl</h1>
-    <p class="lead">Lerne unsere Kandidatinnen und Kandidaten kennen.</p>
+  <header class="header">
+    <div class="container headerInner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Gemeinderatswahl</h1>
+          <p class="lead">Kandidat:innen vorstellen – kurz, übersichtlich, mobilfreundlich.</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#kandidaten">Kandidat:innen</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </nav>
+    </div>
   </header>
 
   <main class="container">
+    <section class="intro">
+      <h2 id="kandidaten">Unsere Kandidat:innen</h2>
+      <p>Tippe/Klicke auf <strong>„Details anzeigen“</strong>, um <strong>Alter</strong>, <strong>Fokusthemen</strong> und <strong>Über mich</strong> zu sehen.</p>
+    </section>
+
     <section id="grid" class="grid" aria-label="Kandidat:innen"></section>
   </main>
 
-  <footer class="container footer">
-    <a href="impressum.html">Impressum</a>
-    <span>·</span>
-    <a href="datenschutz.html">Datenschutz</a>
+  <footer class="footer">
+    <div class="container footerInner">
+      <span>© <span id="year"></span></span>
+      <span class="dot">·</span>
+      <a href="impressum.html">Impressum</a>
+      <span class="dot">·</span>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
   </footer>
 
   <script>
+    const yearEl = document.getElementById("year");
+    yearEl.textContent = String(new Date().getFullYear());
+
+    function escapeHTML(input) {
+      return String(input ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function nl2brSafe(input) {
+      return escapeHTML(input).replaceAll("\n", "<br>");
+    }
+
     async function loadCandidates() {
-      const res = await fetch("candidates.json", { cache: "no-store" });
-      const data = await res.json();
       const grid = document.getElementById("grid");
-grid.innerHTML = data
-  .slice()
-  .sort((a, b) => (a.listenplatz ?? 9999) - (b.listenplatz ?? 9999))
-  .map(c => {
-    const fullName = `${c.vorname ?? ""} ${c.nachname ?? ""}`.trim();
-    const themen = Array.isArray(c.fokusthemen) ? c.fokusthemen : [];
-    return `
-      <article class="card">
-        <img class="avatar" src="${c.photo}" alt="Foto von ${fullName}" loading="lazy">
 
-        <div class="cardBody">
-          <div class="slot">Listenplatz ${c.listenplatz ?? ""}</div>
-          <h2 class="name">${fullName}</h2>
-          ${c.beruf ? `<p class="job">${c.beruf}</p>` : ""}
+      try {
+        const res = await fetch("candidates.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("candidates.json nicht gefunden");
+        const data = await res.json();
 
-          <details class="details">
-            <summary>Mehr anzeigen</summary>
+        const sorted = (Array.isArray(data) ? data : [])
+          .slice()
+          .sort((a, b) => (a.sortKey ?? 9999) - (b.sortKey ?? 9999));
 
-            <div class="detailsInner">
-              ${c.alter ? `<p class="line"><strong>Alter:</strong> ${c.alter} Jahre</p>` : ""}
+        grid.innerHTML = sorted.map(c => {
+          const listenplatz = escapeHTML(c.listenplatz);
+          const name = escapeHTML(c.name);
+          const beruf = escapeHTML(c.beruf);
+          const alter = escapeHTML(c.alter);
+          const themen = Array.isArray(c.fokusthemen) ? c.fokusthemen : [];
+          const ueberMich = c.ueberMich ?? "";
+          const photo = escapeHTML(c.photo);
 
-              ${themen.length ? `
-                <div class="block">
-                  <div class="label">Fokusthemen</div>
-                  <div class="tags">
-                    ${themen.map(t => `<span class="tag">${t}</span>`).join("")}
+          const tagsHTML = themen.length
+            ? `<div class="block">
+                 <div class="label">Fokusthemen</div>
+                 <div class="tags">
+                   ${themen.map(t => `<span class="tag">${escapeHTML(t)}</span>`).join("")}
+                 </div>
+               </div>`
+            : "";
+
+          const aboutHTML = ueberMich
+            ? `<div class="block">
+                 <div class="label">Über mich</div>
+                 <p class="about">${nl2brSafe(ueberMich)}</p>
+               </div>`
+            : "";
+
+          const ageHTML = alter
+            ? `<p class="line"><strong>Alter:</strong> ${alter}</p>`
+            : "";
+
+          return `
+            <article class="card">
+              <div class="media">
+                <img class="avatar"
+                     src="${photo}"
+                     alt="Foto von ${name}"
+                     loading="lazy"
+                     onerror="this.onerror=null;this.classList.add('broken');this.src='';this.alt='';" />
+              </div>
+
+              <div class="cardBody">
+                <div class="slot">Listenplatz ${listenplatz}</div>
+                <h3 class="name">${name}</h3>
+                ${beruf ? `<p class="job">${beruf}</p>` : ""}
+
+                <details class="details">
+                  <summary>Details anzeigen</summary>
+                  <div class="detailsInner">
+                    ${ageHTML}
+                    ${tagsHTML}
+                    ${aboutHTML}
                   </div>
-                </div>
-              ` : ""}
+                </details>
+              </div>
+            </article>
+          `;
+        }).join("");
 
-              ${c.ueberMich ? `
-                <div class="block">
-                  <div class="label">Über mich</div>
-                  <p class="about">${String(c.ueberMich).replaceAll("\n", "<br>")}</p>
-                </div>
-              ` : ""}
-            </div>
-          </details>
-        </div>
-      </article>
-    `;
-  })
-  .join("");
+      } catch (err) {
+        grid.innerHTML = `
+          <div class="error">
+            <strong>Fehler:</strong> Kandidaten konnten nicht geladen werden.<br>
+            Prüfe, ob <code>candidates.json</code> im Repo liegt und gültig ist.
+          </div>
+        `;
+        console.error(err);
+      }
+    }
 
-     
+    loadCandidates();
+  </script>
+</body>
+</html>
