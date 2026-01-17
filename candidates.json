@@ -1,9 +1,12 @@
 [
   {
-    "name": "Max Mustermann",
-    "role": "Listenplatz 1",
-    "teaser": "Kurzer Satz als Vorschau.",
-    "text": "Längerer Text über die Person.\nZweiter Absatz möglich.",
+    "listenplatz": 1,
+    "vorname": "Max",
+    "nachname": "Mustermann",
+    "beruf": "Ingenieur",
+    "alter": 42,
+    "fokusthemen": ["Wohnen", "Mobilität", "Vereine"],
+    "ueberMich": "Ich lebe seit vielen Jahren in Rottershausen und setze mich für pragmatische Lösungen ein.\n\nMir ist wichtig, dass wir gemeinsam anpacken.",
     "photo": "img/1_2.jpg"
   }
 ]
