@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gemeinderatswahl – Kandidat:innen</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="container header">
+    <h1>Gemeinderatswahl</h1>
+    <p class="lead">Lerne unsere Kandidatinnen und Kandidaten kennen.</p>
+  </header>
+
+  <main class="container">
+    <section id="grid" class="grid" aria-label="Kandidat:innen"></section>
+  </main>
+
+  <footer class="container footer">
+    <a href="impressum.html">Impressum</a>
+    <span>·</span>
+    <a href="datenschutz.html">Datenschutz</a>
+  </footer>
+
+  <script>
+    async function loadCandidates() {
+      const res = await fetch("candidates.json", { cache: "no-store" });
+      const data = await res.json();
+      const grid = document.getElementById("grid");
+
+      grid.innerHTML = data.map(c => `
+        <article class="card">
+          <img class="avatar" src="${c.photo}" alt="Foto von ${c.name}" loading="lazy">
+          <div class="cardBody">
+            <h2 class="name">${c.name}</h2>
+            ${c.role ? `<p class="meta">${c.role}</p>` : ""}
+            ${c.teaser ? `<p class="teaser">${c.teaser}</p>` : ""}
+
+            <details class="details">
+              <summary>Mehr über ${c.name}</summary>
+              <div class="detailsInner">
+                <p>${(c.text || "").replaceAll("\n", "<br>")}</p>
+              </div>
+            </details>
+          </div>
+        </article>
+      `).join("");
+    }
+    loadCandidates();
+  </script>
+</body>
+</html>
