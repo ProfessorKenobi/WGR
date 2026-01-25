@@ -6,7 +6,7 @@
   <title>Wählergemeinschaft Rottershausen</title>
   <meta name="description" content="Wählergemeinschaft Rottershausen – Kandidatinnen und Kandidaten zur Gemeinderatswahl." />
 
-  <!-- Flyer-Schrift: Poppins -->
+  <!-- Flyer-Schrift -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <!-- HERO (Flyer Seite 1, als Web-Layout nachgebaut) -->
+  <!-- HERO (Flyer Seite 1 als Startscreen) -->
   <header class="hero" id="top">
     <div class="container heroGrid">
       <div class="heroLeft">
@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <!-- Rosafarbenes Band wie im Flyer -->
+    <!-- Rotes Band -->
     <div class="heroBand">
       <div class="container heroBandInner">
         <div class="bandTitle">Wählergemeinschaft<br>Rottershausen</div>
@@ -64,16 +64,105 @@
   </header>
 
   <main class="container">
-    <!-- Kandidaten-Bereich (Flyer Seite 2: Headline + Kachel-Grid) -->
+    <!-- Kandidaten-Bereich -->
     <section class="section" id="kandidaten">
       <div class="sectionHead">
         <h2>Für Rottershausen in den Gemeinderat</h2>
         <p class="sectionLead">
-          Für mehr Infos über unsere Kandidatinnen und Kandidaten klicken Sie auf "Details anzeigen" (freiwillige Angaben).
+          Standard: <strong>Bild, Listenplatz, Name, Beruf</strong>.
+          Optional (nur bei einigen): <strong>Alter, Fokusthemen, Über mich</strong> im aufklappbaren Bereich.
         </p>
       </div>
 
       <div id="grid" class="grid" aria-label="Kandidat:innen"></div>
+    </section>
+
+    <!-- UNTERER FLYER-TEIL (alles nach dem letzten Kandidaten, Flyer Seite 2) -->
+    <section class="section bottomFlyer" id="wahlhinweise" aria-label="Wahlhinweise und Wahlvorschlag">
+      <div class="bottomGrid">
+        <!-- Linker Block: Wahlhinweise -->
+        <article class="infoCard">
+          <h3>So wählen Sie</h3>
+          <p>
+            Jede Wählerin und jeder Wähler hat <strong>20 Stimmen</strong> für die Gemeinderatswahl zur Verfügung.
+          </p>
+          <p>
+            Mit dem Kreuz ganz oben für die <strong>Wählergemeinschaft Rottershausen</strong> erhält
+            jede Kandidatin und jeder Kandidat eine Stimme – die ersten fünf, die doppelt aufgeführt sind,
+            erhalten jeweils zwei Stimmen.
+          </p>
+          <p>
+            Sie können Ihre 20 Stimmen aber auch individuell verteilen. Dabei können Sie jeder Kandidatin bzw.
+            jedem Kandidaten <strong>maximal drei Stimmen</strong> geben – auch den doppelt aufgeführten.
+            Tragen Sie dazu die Zahl <strong>1</strong>, <strong>2</strong> oder <strong>3</strong> in das Kästchen neben dem Namen ein.
+          </p>
+          <p class="warning">
+            <strong>Achtung:</strong> Sie dürfen insgesamt nicht mehr als <strong>20 Stimmen</strong> vergeben!
+          </p>
+          <p class="moreInfo">
+            Weitere Informationen zu unseren Kandidatinnen und Kandidaten finden Sie hier:<br>
+            <a href="https://waehlergemeinschaft-rottershausen.de" rel="noopener">waehlergemeinschaft-rottershausen.de</a>
+          </p>
+        </article>
+
+        <!-- Rechter Block: Bürgermeister-Unterstützung + Wahlzettel-Kasten -->
+        <aside class="asideStack">
+          <article class="supportCard">
+            <div class="supportText">
+              <p>
+                Bitte unterstützen Sie auch <strong>Nico Rogge</strong>, der in diesem Jahr erneut zur Wahl
+                des ersten Bürgermeisters antritt, mit Ihrer Stimme.
+              </p>
+              <div class="personLine">
+                <div class="avatarCircle" aria-hidden="true">
+                  <!-- Optional: img/nico.jpg hochladen; wenn nicht vorhanden, bleiben Initialen -->
+                  <img src="img/nico.jpg" alt="" loading="lazy"
+                       onerror="this.remove();">
+                  <span class="initials">NR</span>
+                </div>
+                <div>
+                  <div class="personName">Nico Rogge</div>
+                  <div class="personRole">Erster Bürgermeister<br>Gemeinde Oerlenbach</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="ballotCard" aria-label="Wahlvorschlag">
+            <div class="ballotTop">
+              <div class="ballotTitle">Wahlvorschlag Nr. <strong>08</strong></div>
+              <div class="ballotKey">
+                <div class="ballotKeyLabel">Kennwort</div>
+                <div class="ballotKeyValue">Wählergemeinschaft<br>Rottershausen</div>
+              </div>
+            </div>
+
+            <div class="ballotRows">
+              <div class="ballotRow">
+                <div class="ballotCircle" aria-hidden="true"></div>
+                <div class="ballotNo">800</div>
+                <div class="ballotBars" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="ballotRow">
+                <div class="ballotCircle" aria-hidden="true"></div>
+                <div class="ballotNo">801</div>
+                <div class="ballotBars" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="ballotRow">
+                <div class="ballotCircle" aria-hidden="true"></div>
+                <div class="ballotNo">802</div>
+                <div class="ballotBars" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </aside>
+      </div>
     </section>
   </main>
 
@@ -127,7 +216,7 @@
             return `
               <article class="card restricted">
                 <div class="slotPill">Listenplatz ${escapeHTML(c.listenplatz)}</div>
-                <div class="restrictedText">Namentliche Nennung nicht gewünscht.</div>
+                <div class="restrictedText">Namentliche Nennung nicht erlaubt</div>
               </article>
             `;
           }
