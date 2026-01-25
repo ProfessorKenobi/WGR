@@ -2,8 +2,8 @@
   {
     "sortKey": 1,
     "listenplatz": "1–2",
-    "name": "Kandidatin A & Kandidat B",
-    "beruf": "Beruf A / Beruf B",
+    "name": "Martin Greubel",
+    "beruf": "Elektrotechniker",
     "photo": "img/1_2.jpg",
     "alter": "41 Jahre / 38 Jahre",
     "fokusthemen": ["Vereine", "Familien", "Transparenz"],
@@ -12,8 +12,8 @@
   {
     "sortKey": 3,
     "listenplatz": "3–4",
-    "name": "Kandidatin C & Kandidat D",
-    "beruf": "Beruf C / Beruf D",
+    "name": "Matthäus Owczarek",
+    "beruf": "Strategiereferent Arzneimittelversorgung",
     "photo": "img/3_4.jpg",
     "alter": "33 Jahre / 45 Jahre",
     "fokusthemen": ["Infrastruktur", "Sicherheit", "Ehrenamt"],
@@ -22,15 +22,15 @@
   {
     "sortKey": 5,
     "listenplatz": "5–6",
-    "name": "Kandidatin E & Kandidat F",
-    "beruf": "Beruf E / Beruf F",
+    "name": "Markus Renninger",
+    "beruf": "Entwicklungsingenieur",
     "photo": "img/5_6.jpg"
   },
   {
     "sortKey": 7,
     "listenplatz": "7–8",
-    "name": "Kandidatin G & Kandidat H",
-    "beruf": "Beruf G / Beruf H",
+    "name": "Daniel Schmitt",
+    "beruf": "Prozessanlagen-Ingenieur",
     "photo": "img/7_8.jpg",
     "alter": "29 Jahre / 52 Jahre",
     "fokusthemen": ["Nahversorgung", "Mobilität", "Ortsentwicklung"],
@@ -39,16 +39,16 @@
   {
     "sortKey": 9,
     "listenplatz": "9–10",
-    "name": "Kandidatin I & Kandidat J",
-    "beruf": "Beruf I / Beruf J",
+    "name": "Benjamin Seufert",
+    "beruf": "Mitarbeiter Technischer Vertrieb",
     "photo": "img/9_10.jpg"
   },
 
   {
     "sortKey": 11,
     "listenplatz": "11",
-    "name": "Kandidat K",
-    "beruf": "Beruf K",
+    "name": "Bastian Werner",
+    "beruf": "Arbeitsvorbereitung Maschinenbau",
     "photo": "img/11.jpg",
     "alter": "39 Jahre",
     "fokusthemen": ["Finanzen", "Prioritäten", "Transparenz"],
@@ -57,8 +57,8 @@
   {
     "sortKey": 12,
     "listenplatz": "12",
-    "name": "Kandidatin L",
-    "beruf": "Beruf L",
+    "name": "Julius Erhard",
+    "beruf": "Koch",
     "photo": "img/12.jpg",
     "alter": "28 Jahre",
     "fokusthemen": ["Jugend", "Sport", "Miteinander"],
@@ -67,8 +67,8 @@
   {
     "sortKey": 13,
     "listenplatz": "13",
-    "name": "Kandidatin M",
-    "beruf": "Beruf M",
+    "name": "Manfred Reuß",
+    "beruf": "Technischer Beamter",
     "photo": "img/13.jpg",
     "alter": "44 Jahre",
     "ueberMich": "Ich setze mich für alltagstaugliche Entscheidungen ein: Dinge, die man im Ort spürt.\n\nWichtig ist mir ein respektvoller Umgang – so kommen wir gemeinsam weiter."
@@ -76,8 +76,8 @@
   {
     "sortKey": 14,
     "listenplatz": "14",
-    "name": "Kandidat N",
-    "beruf": "Beruf N",
+    "name": "Simone Renninger",
+    "beruf": "Medizinisch-technische Radiologieassistentin",
     "photo": "img/14.jpg"
   },
   {
@@ -88,36 +88,36 @@
   {
     "sortKey": 16,
     "listenplatz": "16",
-    "name": "Kandidat O",
-    "beruf": "Beruf O",
+    "name": "Thomas Rauh",
+    "beruf": "Instandhaltungsmechaniker",
     "photo": "img/16.jpg"
   },
   {
     "sortKey": 17,
     "listenplatz": "17",
-    "name": "Kandidatin P",
-    "beruf": "Beruf P",
+    "name": "René Rudolph",
+    "beruf": "Arbeitsvorbereitung",
     "photo": "img/17.jpg"
   },
   {
     "sortKey": 18,
     "listenplatz": "18",
-    "name": "Kandidat Q",
-    "beruf": "Beruf Q",
+    "name": "Annika Greubel",
+    "beruf": "Augenoptikerin",
     "photo": "img/18.jpg"
   },
   {
     "sortKey": 19,
     "listenplatz": "19",
-    "name": "Kandidatin R",
-    "beruf": "Beruf R",
+    "name": "Michael Reuß",
+    "beruf": "Logistiker, Feldgeschworener",
     "photo": "img/19.jpg"
   },
   {
     "sortKey": 20,
     "listenplatz": "20",
-    "name": "Kandidat S",
-    "beruf": "Beruf S",
+    "name": "Reiner Erhard",
+    "beruf": "Selbstständiger Metallbaumeister",
     "photo": "img/20.jpg"
   }
 ]
