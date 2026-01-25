@@ -2,152 +2,122 @@
   {
     "sortKey": 1,
     "listenplatz": "1–2",
-    "name": "Mara Hoffmann & Tobias Klein",
-    "beruf": "Sozialpädagogin & Elektromeister",
-    "alter": "38 Jahre / 41 Jahre",
-    "fokusthemen": ["Familien", "Vereine", "Ehrenamt"],
-    "ueberMich": "Wir leben hier mit unseren Familien und kennen die Themen vor Ort aus dem Alltag: Betreuung, Freizeitangebote, gute Kommunikation im Ort.\n\nUns ist wichtig, dass Entscheidungen nachvollziehbar sind und Projekte mit Augenmaß umgesetzt werden – gemeinsam mit den Menschen, die hier leben.",
-    "photo": "img/1_2.jpg"
+    "name": "Kandidatin A & Kandidat B",
+    "beruf": "Beruf A / Beruf B",
+    "photo": "img/1_2.jpg",
+    "alter": "41 Jahre / 38 Jahre",
+    "fokusthemen": ["Vereine", "Familien", "Transparenz"],
+    "ueberMich": "Wir setzen uns für eine verlässliche Gemeindepolitik ein: nah dran, ansprechbar und lösungsorientiert.\n\nWichtig sind uns kurze Wege, klare Entscheidungen und ein gutes Miteinander im Ort."
   },
   {
     "sortKey": 3,
     "listenplatz": "3–4",
-    "name": "Leonie Bauer & Samuel Roth",
-    "beruf": "Ergotherapeutin & Landwirt",
-    "alter": "29 Jahre / 33 Jahre",
-    "fokusthemen": ["Nahversorgung", "Land & Natur", "Miteinander"],
-    "ueberMich": "Wir möchten, dass unser Ort lebendig bleibt: kurze Wege, ein gutes Miteinander und praktische Lösungen statt endloser Debatten.\n\nBesonders am Herzen liegen uns Natur- und Landschaftsschutz, eine faire Unterstützung für regionale Betriebe und Treffpunkte, die Generationen verbinden.",
-    "photo": "img/3_4.jpg"
+    "name": "Kandidatin C & Kandidat D",
+    "beruf": "Beruf C / Beruf D",
+    "photo": "img/3_4.jpg",
+    "alter": "33 Jahre / 45 Jahre",
+    "fokusthemen": ["Infrastruktur", "Sicherheit", "Ehrenamt"],
+    "ueberMich": "Wir möchten, dass Projekte planbar umgesetzt werden und die Gemeinde bei Kernaufgaben zuverlässig bleibt.\n\nGleichzeitig soll das Ehrenamt gestärkt werden – es hält unsere Gemeinschaft zusammen."
   },
   {
     "sortKey": 5,
     "listenplatz": "5–6",
-    "name": "Aylin Demir & Jonas Schuster",
-    "beruf": "Projektmanagerin & Feuerwehrmann",
-    "alter": "35 Jahre / 30 Jahre",
-    "fokusthemen": ["Sicherheit", "Verkehr", "Gemeinschaft"],
-    "ueberMich": "Wir setzen uns für sichere Wege, gute Beleuchtung und vernünftige Verkehrsführung ein – besonders dort, wo Kinder unterwegs sind.\n\nGleichzeitig wollen wir das Ehrenamt stärken: Feuerwehr, Rettungsdienste, Vereine – das ist das Rückgrat unserer Gemeinde.",
+    "name": "Kandidatin E & Kandidat F",
+    "beruf": "Beruf E / Beruf F",
     "photo": "img/5_6.jpg"
   },
   {
     "sortKey": 7,
     "listenplatz": "7–8",
-    "name": "Katharina Seidel & Paul Wagner",
-    "beruf": "Lehrerin & Schreiner",
-    "alter": "44 Jahre / 46 Jahre",
-    "fokusthemen": ["Bildung", "Bauen & Sanieren", "Ortsbild"],
-    "ueberMich": "Gute Bildung beginnt vor Ort: verlässliche Angebote, sichere Schulwege und Räume, die funktionieren.\n\nAußerdem möchten wir, dass Sanierungen und Bauprojekte nachhaltig gedacht werden: langlebig, bezahlbar und passend zum Ortsbild.",
-    "photo": "img/7_8.jpg"
+    "name": "Kandidatin G & Kandidat H",
+    "beruf": "Beruf G / Beruf H",
+    "photo": "img/7_8.jpg",
+    "alter": "29 Jahre / 52 Jahre",
+    "fokusthemen": ["Nahversorgung", "Mobilität", "Ortsentwicklung"],
+    "ueberMich": "Unser Ziel ist ein lebenswerter Ort für alle Generationen: gute Wege, saubere Planung und eine starke Mitte.\n\nWir setzen auf pragmatische Lösungen statt großer Versprechen."
   },
   {
     "sortKey": 9,
     "listenplatz": "9–10",
-    "name": "Nina Vogel & Ben Hartmann",
-    "beruf": "Pflegefachkraft & IT-Berater",
-    "alter": "27 Jahre / 39 Jahre",
-    "fokusthemen": ["Gesundheit", "Digitales", "Service im Rathaus"],
-    "ueberMich": "Wir wünschen uns mehr Serviceorientierung in der Verwaltung: klare Zuständigkeiten, verständliche Informationen und wo möglich digitale Wege.\n\nGleichzeitig sehen wir, wie wichtig gute Pflege- und Unterstützungsangebote sind – für Familien, Seniorinnen und Senioren und alle, die Hilfe brauchen.",
+    "name": "Kandidatin I & Kandidat J",
+    "beruf": "Beruf I / Beruf J",
     "photo": "img/9_10.jpg"
   },
 
   {
     "sortKey": 11,
     "listenplatz": "11",
-    "name": "Johanna Fröhlich",
-    "beruf": "Bibliothekarin",
-    "alter": "52 Jahre",
-    "fokusthemen": ["Kultur", "Treffpunkte", "Zusammenhalt"],
-    "ueberMich": "Ich mag Orte, an denen Menschen sich begegnen können – ohne Hürden und unabhängig vom Alter.\n\nMein Ziel: kleine, realistische Kultur- und Begegnungsangebote stärken und neue Formate unterstützen, die den Zusammenhalt im Ort fördern.",
-    "photo": "img/11.jpg"
+    "name": "Kandidat K",
+    "beruf": "Beruf K",
+    "photo": "img/11.jpg",
+    "alter": "39 Jahre",
+    "fokusthemen": ["Finanzen", "Prioritäten", "Transparenz"],
+    "ueberMich": "Ich stehe für eine verantwortungsbewusste Haushaltspolitik: erst die Pflicht, dann die Kür.\n\nEntscheidungen sollen nachvollziehbar sein – mit klarer Kommunikation gegenüber den Bürgerinnen und Bürgern."
   },
   {
     "sortKey": 12,
     "listenplatz": "12",
-    "name": "Lukas Neumann",
-    "beruf": "Busfahrer",
-    "alter": "36 Jahre",
-    "fokusthemen": ["Mobilität", "Barrierefreiheit", "Alltagstauglichkeit"],
-    "ueberMich": "Im Alltag zählt, ob Wege funktionieren: Haltestellen, Anschlüsse, sichere Querungen und gut gepflegte Gehwege.\n\nIch setze mich dafür ein, dass Mobilität nicht kompliziert ist – besonders für Menschen ohne Auto, für Ältere und für Familien.",
-    "photo": "img/12.jpg"
+    "name": "Kandidatin L",
+    "beruf": "Beruf L",
+    "photo": "img/12.jpg",
+    "alter": "28 Jahre",
+    "fokusthemen": ["Jugend", "Sport", "Miteinander"],
+    "ueberMich": "Mir ist wichtig, dass junge Menschen gehört werden und wir Angebote schaffen, die bleiben.\n\nIch möchte Beteiligung fördern und Projekte unterstützen, die das Vereinsleben stärken."
   },
   {
     "sortKey": 13,
     "listenplatz": "13",
-    "name": "Sophie Lorenz",
-    "beruf": "Bäckermeisterin",
-    "alter": "31 Jahre",
-    "fokusthemen": ["Nahversorgung", "Innenort", "Wirtschaft vor Ort"],
-    "ueberMich": "Regionale Angebote machen einen Ort lebenswert – und sie entstehen nicht von selbst.\n\nIch möchte, dass die Gemeinde lokale Betriebe fair einbindet und dass Innenorte attraktiv bleiben: mit kurzen Wegen, guter Aufenthaltsqualität und klarer Planung.",
-    "photo": "img/13.jpg"
+    "name": "Kandidatin M",
+    "beruf": "Beruf M",
+    "photo": "img/13.jpg",
+    "alter": "44 Jahre",
+    "ueberMich": "Ich setze mich für alltagstaugliche Entscheidungen ein: Dinge, die man im Ort spürt.\n\nWichtig ist mir ein respektvoller Umgang – so kommen wir gemeinsam weiter."
   },
   {
     "sortKey": 14,
     "listenplatz": "14",
-    "name": "Mehmet Yilmaz",
-    "beruf": "Gärtner",
-    "alter": "47 Jahre",
-    "fokusthemen": ["Grünflächen", "Klimaanpassung", "Sauberkeit"],
-    "ueberMich": "Grünflächen sind mehr als „schön“: Sie kühlen, sie sind Treffpunkte und sie verbessern die Lebensqualität.\n\nIch will pragmatische Maßnahmen: gute Pflege, mehr Schattenplätze und klare Zuständigkeiten, damit der Ort ordentlich und einladend bleibt.",
+    "name": "Kandidat N",
+    "beruf": "Beruf N",
     "photo": "img/14.jpg"
   },
   {
     "sortKey": 15,
     "listenplatz": "15",
-    "name": "Clara Brandt",
-    "beruf": "Studentin (Umweltplanung)",
-    "alter": "24 Jahre",
-    "fokusthemen": ["Jugend", "Klimaschutz", "Beteiligung"],
-    "ueberMich": "Ich wünsche mir, dass junge Menschen gefragt werden – nicht nur, wenn es um Sportplätze geht, sondern auch bei langfristigen Themen.\n\nMein Fokus liegt auf realistischen Klimaschutz-Maßnahmen vor Ort und auf Beteiligung, die wirklich ernst genommen wird.",
-    "photo": "img/15.jpg"
+    "restricted": true
   },
   {
     "sortKey": 16,
     "listenplatz": "16",
-    "name": "Andreas König",
-    "beruf": "Polizeibeamter",
-    "alter": "50 Jahre",
-    "fokusthemen": ["Sicherheit", "Prävention", "Beleuchtung"],
-    "ueberMich": "Sicherheit entsteht durch gute Prävention: Beleuchtung, sichtbare Ansprechpartner und klare Regeln an problematischen Stellen.\n\nIch setze mich für Lösungen ein, die wirken – ohne unnötige Symbolpolitik, aber mit klarer Verantwortung.",
+    "name": "Kandidat O",
+    "beruf": "Beruf O",
     "photo": "img/16.jpg"
   },
   {
     "sortKey": 17,
     "listenplatz": "17",
-    "name": "Friederike Sauer",
-    "beruf": "Physiotherapeutin",
-    "alter": "40 Jahre",
-    "fokusthemen": ["Gesundheit", "Senior:innen", "Barrierefreiheit"],
-    "ueberMich": "Mir ist wichtig, dass Menschen so lange wie möglich gut im Ort leben können – mit passenden Angeboten, barrierefreien Wegen und verständlicher Information.\n\nIch möchte die Zusammenarbeit von Vereinen, Nachbarschaftshilfe und Kommune stärken, damit Unterstützung dort ankommt, wo sie gebraucht wird.",
+    "name": "Kandidatin P",
+    "beruf": "Beruf P",
     "photo": "img/17.jpg"
   },
   {
     "sortKey": 18,
     "listenplatz": "18",
-    "name": "David Steiner",
-    "beruf": "Bauingenieur",
-    "alter": "34 Jahre",
-    "fokusthemen": ["Infrastruktur", "Straßen", "Haushalt & Prioritäten"],
-    "ueberMich": "Eine Gemeinde kann nicht alles gleichzeitig machen – aber sie kann Prioritäten sauber setzen.\n\nIch stehe für planbares Vorgehen bei Straßen, Wegen und Gebäuden: realistische Zeitpläne, transparente Kosten und solide Umsetzung.",
+    "name": "Kandidat Q",
+    "beruf": "Beruf Q",
     "photo": "img/18.jpg"
   },
   {
     "sortKey": 19,
     "listenplatz": "19",
-    "name": "Helena Busch",
-    "beruf": "Erzieherin",
-    "alter": "28 Jahre",
-    "fokusthemen": ["Kinderbetreuung", "Spielplätze", "Familien"],
-    "ueberMich": "Familien brauchen Verlässlichkeit: gute Betreuung, klare Informationen und Orte, an denen Kinder sicher spielen können.\n\nIch setze mich für gepflegte Spielplätze, sichere Wege und eine gute Abstimmung zwischen Trägern, Gemeinde und Eltern ein.",
+    "name": "Kandidatin R",
+    "beruf": "Beruf R",
     "photo": "img/19.jpg"
   },
   {
     "sortKey": 20,
     "listenplatz": "20",
-    "name": "Peter Schenk",
-    "beruf": "Rentner (ehem. Postbeamter)",
-    "alter": "67 Jahre",
-    "fokusthemen": ["Transparenz", "Bürgerservice", "Zusammenleben"],
-    "ueberMich": "Ich möchte, dass Entscheidungen im Gemeinderat verständlich erklärt werden und dass man im Rathaus schnell Hilfe bekommt.\n\nMir ist ein respektvoller Umgang wichtig: unterschiedliche Meinungen gehören dazu – entscheidend ist, wie man miteinander spricht und Lösungen findet.",
+    "name": "Kandidat S",
+    "beruf": "Beruf S",
     "photo": "img/20.jpg"
   }
 ]
