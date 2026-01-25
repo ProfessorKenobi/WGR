@@ -70,14 +70,14 @@
         <h2>Für Rottershausen in den Gemeinderat</h2>
         <p class="sectionLead">
           Für weitere Informationen zu den Kandidatinnen und Kandidaten klicken Sie auf <strong>Details anzeigen</strong>.
-          (Freiwillige angaben).
+          <span class="fineNote">(Freiwillige Angaben)</span>
         </p>
       </div>
 
       <div id="grid" class="grid" aria-label="Kandidat:innen"></div>
     </section>
 
-    <!-- UNTERER FLYER-TEIL (alles nach dem letzten Kandidaten, Flyer Seite 2) -->
+    <!-- UNTERER FLYER-TEIL (alles nach dem letzten Kandidaten) -->
     <section class="section bottomFlyer" id="wahlhinweise" aria-label="Wahlhinweise und Wahlvorschlag">
       <div class="bottomGrid">
         <!-- Linker Block: Wahlhinweise -->
@@ -99,20 +99,52 @@
           <p class="warning">
             <strong>Achtung:</strong> Sie dürfen insgesamt nicht mehr als <strong>20 Stimmen</strong> vergeben!
           </p>
-          <p class="moreInfo">
-            Weitere Informationen zu unseren Kandidatinnen und Kandidaten finden Sie hier:<br>
-            <a href="https://waehlergemeinschaft-rottershausen.de" rel="noopener">waehlergemeinschaft-rottershausen.de</a>
-          </p>
         </article>
 
         <!-- Rechter Block: Bürgermeister-Unterstützung + Wahlzettel-Kasten -->
         <aside class="asideStack">
-          <article class="supportCard">
-            <div class="supportText">
-              <p>
-                Bitte unterstützen Sie auch <strong>Nico Rogge</strong>, der in diesem Jahr erneut zur Wahl
-                des ersten Bürgermeisters antritt, mit Ihrer Stimme.
-             
+          <article class="supportCard" aria-label="Bürgermeister">
+            <div class="personLine">
+              <div class="avatarCircle" aria-hidden="true">
+                <!-- Optional: img/nico.jpg hochladen; wenn nicht vorhanden, bleiben Initialen -->
+                <img src="img/nico.jpg" alt="" loading="lazy" onerror="this.remove();">
+                <span class="initials">NR</span>
+              </div>
+              <div>
+                <div class="personName">Nico Rogge</div>
+                <div class="personRole">Erster Bürgermeister<br>Gemeinde Oerlenbach</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="ballotCard" aria-label="Wahlvorschlag">
+            <div class="ballotTop">
+              <div class="ballotTitle">Wahlvorschlag Nr. <strong>08</strong></div>
+              <div class="ballotKey">
+                <div class="ballotKeyLabel">Kennwort</div>
+                <div class="ballotKeyValue">Wählergemeinschaft<br>Rottershausen</div>
+              </div>
+            </div>
+
+            <div class="ballotRows">
+              <div class="ballotRow">
+                <div class="ballotCircle" aria-hidden="true"></div>
+                <div class="ballotNo">800</div>
+                <div class="ballotBars" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="ballotRow">
+                <div class="ballotCircle" aria-hidden="true"></div>
+                <div class="ballotNo">801</div>
+                <div class="ballotBars" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="ballotRow">
+                <div class="ballotCircle" aria-hidden="true"></div>
+                <div class="ballotNo">802</div>
+                <div class="ballotBars" aria-hidden="true">
                   <span></span><span></span><span></span><span></span>
                 </div>
               </div>
@@ -152,7 +184,11 @@
     }
 
     function hasDetails(c) {
-      return Boolean(c.alter || (Array.isArray(c.fokusthemen) && c.fokusthemen.length) || c.ueberMich);
+      return Boolean(
+        c.alter ||
+        (Array.isArray(c.fokusthemen) && c.fokusthemen.length) ||
+        c.ueberMich
+      );
     }
 
     async function loadCandidates() {
@@ -183,7 +219,9 @@
           const beruf = escapeHTML(c.beruf);
           const photo = escapeHTML(c.photo);
 
-          const ageHTML = c.alter ? `<p class="line"><strong>Alter:</strong> ${escapeHTML(c.alter)}</p>` : "";
+          const ageHTML = c.alter
+            ? `<p class="line"><strong>Alter:</strong> ${escapeHTML(c.alter)}</p>`
+            : "";
 
           const themen = Array.isArray(c.fokusthemen) ? c.fokusthemen : [];
           const tagsHTML = themen.length ? `
