@@ -82,8 +82,9 @@
   },
   {
     "sortKey": 15,
-    "listenplatz": "15",
-    "restricted": true
+  "listenplatz": "15",
+  "restricted": true,
+  "photo": "img/15.jpg"
   },
   {
     "sortKey": 16,
