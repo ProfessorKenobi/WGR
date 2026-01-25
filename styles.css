@@ -9,15 +9,13 @@
   --radius:22px;
   --max:1100px;
 
-  /* Typo grob an Flyer orientiert */
   --h1: clamp(26px, 3.2vw, 44px);
   --h2: clamp(22px, 2.4vw, 34px);
-  --p: 16px;
 }
 
 *{ box-sizing:border-box; }
-
 html,body{ height:100%; }
+
 body{
   margin:0;
   font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -31,10 +29,7 @@ body{
 }
 
 /* HERO */
-.hero{
-  padding-top: 22px;
-  background: var(--bg);
-}
+.hero{ padding-top: 22px; background: var(--bg); }
 
 .heroGrid{
   display:grid;
@@ -43,10 +38,9 @@ body{
   align-items:end;
   padding-bottom: 18px;
 }
-
 @media (max-width: 860px){
   .heroGrid{ grid-template-columns: 1fr; }
-  .heroRight{ order:-1; }
+  .heroRight{ order:-1; justify-content:flex-start; }
 }
 
 .heroDate{
@@ -55,7 +49,6 @@ body{
   gap:4px;
   margin-bottom: 10px;
 }
-
 .heroDateBig{
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -73,7 +66,7 @@ body{
 
 .heroIntro{
   margin: 0 0 16px;
-  font-size: var(--p);
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.55;
   max-width: 62ch;
@@ -88,16 +81,13 @@ body{
   gap: 12px;
   max-width: 68ch;
 }
-
 .heroBullets li{
   display:flex;
   gap: 10px;
   align-items:flex-start;
   font-size: 15px;
   line-height: 1.5;
-  color: var(--text);
 }
-
 .bulletIcon{
   width: 22px;
   height: 22px;
@@ -115,11 +105,7 @@ body{
   display:flex;
   justify-content:flex-end;
 }
-
-.spirk{
-  width: min(420px, 100%);
-  height: auto;
-}
+.spirk{ width: min(420px, 100%); height: auto; }
 
 /* Rotes Band */
 .heroBand{
@@ -127,25 +113,21 @@ body{
   color: #fff;
   padding: 18px 0 20px;
 }
-
 .heroBandInner{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
   align-items:end;
 }
-
 @media (max-width: 860px){
   .heroBandInner{ grid-template-columns: 1fr; }
 }
-
 .bandTitle{
   font-size: clamp(28px, 3.8vw, 52px);
   line-height: 1.0;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-
 .bandSub{
   font-size: 15px;
   line-height: 1.35;
@@ -153,10 +135,7 @@ body{
 }
 
 /* SECTION */
-.section{
-  padding: 28px 0 40px;
-}
-
+.section{ padding: 28px 0 40px; }
 .sectionHead h2{
   margin: 0 0 8px;
   font-size: var(--h2);
@@ -164,7 +143,6 @@ body{
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-
 .sectionLead{
   margin: 0;
   color: var(--muted);
@@ -172,14 +150,13 @@ body{
   font-size: 15px;
 }
 
-/* GRID + CARDS (Flyer Seite 2 Feeling) */
+/* GRID + CARDS */
 .grid{
   margin-top: 18px;
   display:grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
-
 @media (max-width: 960px){
   .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -197,10 +174,7 @@ body{
   padding: 14px;
 }
 
-.photoWrap{
-  flex:0 0 auto;
-}
-
+.photoWrap{ flex:0 0 auto; }
 .avatar{
   width: 96px;
   height: 96px;
@@ -211,10 +185,7 @@ body{
   display:block;
 }
 
-.cardBody{
-  flex: 1 1 auto;
-  min-width: 0;
-}
+.cardBody{ flex: 1 1 auto; min-width: 0; }
 
 .slotPill{
   display:inline-flex;
@@ -260,29 +231,17 @@ body{
   background: var(--yellow);
   color: #111;
 }
-
-.details summary:hover{
-  filter: brightness(0.98);
-}
-
-.details[open] summary{
-  margin-bottom: 10px;
-}
+.details summary:hover{ filter: brightness(0.98); }
+.details[open] summary{ margin-bottom: 10px; }
 
 .detailsInner{
   padding: 0 2px 2px;
   font-size: 14px;
   line-height: 1.55;
 }
+.line{ margin: 0 0 10px; }
 
-.line{
-  margin: 0 0 10px;
-}
-
-.block{
-  margin-top: 12px;
-}
-
+.block{ margin-top: 12px; }
 .label{
   font-weight: 800;
   font-size: 12px;
@@ -291,13 +250,7 @@ body{
   margin-bottom: 6px;
   color: var(--muted);
 }
-
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 8px;
-}
-
+.tags{ display:flex; flex-wrap:wrap; gap: 8px; }
 .tag{
   display:inline-block;
   padding: 6px 10px;
@@ -306,7 +259,6 @@ body{
   background: rgba(223,173,66,.18);
   font-size: 13px;
 }
-
 .about{ margin:0; }
 
 /* Restricted card (Listenplatz 15) */
@@ -315,13 +267,184 @@ body{
   display:block;
   text-align:left;
 }
-
 .restrictedText{
   margin-top: 10px;
   font-size: 18px;
   font-weight: 700;
   line-height: 1.25;
   color: var(--text);
+}
+
+/* Bottom flyer section */
+.bottomFlyer{ padding-top: 8px; }
+.bottomGrid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+  align-items:start;
+}
+@media (max-width: 920px){
+  .bottomGrid{ grid-template-columns: 1fr; }
+}
+
+.infoCard{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+}
+.infoCard h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.infoCard p{
+  margin: 0 0 10px;
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+.warning{
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(228,133,119,.18);
+  border: 1px solid rgba(228,133,119,.35);
+}
+.moreInfo a{
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(223,173,66,.9);
+}
+.moreInfo a:hover{ filter: brightness(0.95); }
+
+.asideStack{
+  display:flex;
+  flex-direction:column;
+  gap: 16px;
+}
+
+/* Support card */
+.supportCard{
+  background: rgba(223,173,66,.28);
+  border: 1px solid rgba(223,173,66,.55);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.supportCard p{
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.personLine{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+}
+.avatarCircle{
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  overflow:hidden;
+  border: 1px solid rgba(0,0,0,.15);
+  background: rgba(255,255,255,.55);
+  display:grid;
+  place-items:center;
+  position: relative;
+  flex:0 0 auto;
+}
+.avatarCircle img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+.avatarCircle .initials{
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: rgba(0,0,0,.70);
+}
+.personName{
+  font-weight: 800;
+  font-size: 14px;
+}
+.personRole{
+  color: rgba(0,0,0,.70);
+  font-size: 12px;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+/* Ballot card */
+.ballotCard{
+  background: var(--yellow);
+  border: 1px solid rgba(223,173,66,.9);
+  border-radius: var(--radius);
+  overflow:hidden;
+}
+.ballotTop{
+  padding: 14px 16px 10px;
+  display:flex;
+  gap: 14px;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+.ballotTitle{
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.1;
+}
+.ballotKey{
+  text-align:left;
+}
+.ballotKeyLabel{
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  font-weight: 800;
+  opacity: .85;
+}
+.ballotKeyValue{
+  font-size: 12px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.ballotRows{
+  padding: 12px 16px 16px;
+  background: rgba(255,255,255,.30);
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+.ballotRow{
+  display:grid;
+  grid-template-columns: 30px 54px 1fr;
+  gap: 10px;
+  align-items:center;
+}
+.ballotCircle{
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  border: 2px solid rgba(0,0,0,.30);
+  background: rgba(255,255,255,.35);
+}
+.ballotNo{
+  font-weight: 800;
+  font-size: 14px;
+}
+.ballotBars{
+  display:flex;
+  gap: 6px;
+}
+.ballotBars span{
+  height: 10px;
+  flex: 1 1 auto;
+  border-radius: 999px;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(0,0,0,.10);
 }
 
 /* Footer */
@@ -331,20 +454,17 @@ body{
   color: var(--muted);
   font-size: 13px;
 }
-
 .footerInner{
   display:flex;
   gap: 10px;
   align-items:center;
   flex-wrap:wrap;
 }
-
 .footer a{
   color: inherit;
   text-decoration:none;
   font-weight: 600;
 }
-
 .footer a:hover{ text-decoration: underline; }
 .sep{ opacity:.65; }
 
@@ -354,7 +474,6 @@ body{
   border: 1px solid var(--border);
   background: rgba(0,0,0,.03);
 }
-
 code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 12px;
