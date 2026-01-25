@@ -77,7 +77,7 @@
       <div id="grid" class="grid" aria-label="Kandidat:innen"></div>
     </section>
 
-    <!-- UNTERER FLYER-TEIL (neu, ohne Website-Link + ohne Wahlzettel) -->
+    <!-- UNTERER FLYER-TEIL (ohne Website-Link + ohne Wahlzettel) -->
     <section class="section bottomFlyer" id="wahlhinweise" aria-label="Wahlhinweise und Bürgermeister">
       <div class="bottomGrid">
         <!-- Linker Block: Wahlhinweise -->
@@ -116,8 +116,7 @@
             <div class="personLine">
               <div class="avatarCircle" aria-hidden="true">
                 <!-- Foto-Datei: img/nico.jpg -->
-                <img src="img/nico.jpg" alt="" loading="lazy"
-                     onerror="this.remove();">
+                <img src="img/nico.jpg" alt="" loading="lazy" onerror="this.remove();">
                 <span class="initials">NR</span>
               </div>
               <div>
@@ -180,17 +179,25 @@
           .sort((a, b) => (a.sortKey ?? 9999) - (b.sortKey ?? 9999));
 
         grid.innerHTML = sorted.map(c => {
-          // Sonderfall: Platz 15 -> nur Hinweistext
+          const listenplatz = escapeHTML(c.listenplatz);
+
+          // Sonderfall: Platz 15 -> Bild + Listenplatz + Hinweistext (sonst nichts)
           if (c.restricted === true) {
+            const photo = escapeHTML(c.photo || "");
             return `
               <article class="card restricted">
-                <div class="slotPill">Listenplatz ${escapeHTML(c.listenplatz)}</div>
-                <div class="restrictedText">Namentliche Nennung nicht erlaubt</div>
+                <div class="photoWrap">
+                  ${photo ? `<img class="avatar" src="${photo}" alt="" loading="lazy">` : ""}
+                </div>
+
+                <div class="cardBody">
+                  <div class="slotPill">Listenplatz ${listenplatz}</div>
+                  <div class="restrictedText">Namentliche Nennung nicht erlaubt</div>
+                </div>
               </article>
             `;
           }
 
-          const listenplatz = escapeHTML(c.listenplatz);
           const name = escapeHTML(c.name);
           const beruf = escapeHTML(c.beruf);
           const photo = escapeHTML(c.photo);
