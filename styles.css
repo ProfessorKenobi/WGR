@@ -150,6 +150,15 @@ body{
   font-size: 15px;
 }
 
+/* Hinweis (Freiwillige Angaben) */
+.fineNote{
+  display:inline-block;
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
 /* GRID + CARDS */
 .grid{
   margin-top: 18px;
@@ -261,17 +270,12 @@ body{
 }
 .about{ margin:0; }
 
-/* Restricted card (Listenplatz 15) */
-.card.restricted{
-  padding: 18px;
-  display:block;
-  text-align:left;
-}
+/* Text für Listenplatz 15 */
 .restrictedText{
-  margin-top: 10px;
+  margin: 6px 0 0;
   font-size: 18px;
-  font-weight: 700;
-  line-height: 1.25;
+  font-weight: 800;
+  line-height: 1.2;
   color: var(--text);
 }
 
@@ -310,13 +314,6 @@ body{
   background: rgba(228,133,119,.18);
   border: 1px solid rgba(228,133,119,.35);
 }
-.moreInfo a{
-  color: var(--text);
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 2px solid rgba(223,173,66,.9);
-}
-.moreInfo a:hover{ filter: brightness(0.95); }
 
 .asideStack{
   display:flex;
@@ -375,76 +372,19 @@ body{
   margin-top: 2px;
 }
 
-/* Ballot card */
-.ballotCard{
-  background: var(--yellow);
-  border: 1px solid rgba(223,173,66,.9);
+/* Wahlzettel */
+.ballotFigure{
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow:hidden;
+  background: #fff;
 }
-.ballotTop{
-  padding: 14px 16px 10px;
-  display:flex;
-  gap: 14px;
-  align-items:flex-start;
-  justify-content:space-between;
-}
-.ballotTitle{
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 1.1;
-}
-.ballotKey{
-  text-align:left;
-}
-.ballotKeyLabel{
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: .03em;
-  font-weight: 800;
-  opacity: .85;
-}
-.ballotKeyValue{
-  font-size: 12px;
-  line-height: 1.15;
-  font-weight: 700;
-  margin-top: 4px;
-}
-
-.ballotRows{
-  padding: 12px 16px 16px;
-  background: rgba(255,255,255,.30);
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
-}
-.ballotRow{
-  display:grid;
-  grid-template-columns: 30px 54px 1fr;
-  gap: 10px;
-  align-items:center;
-}
-.ballotCircle{
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-  border: 2px solid rgba(0,0,0,.30);
-  background: rgba(255,255,255,.35);
-}
-.ballotNo{
-  font-weight: 800;
-  font-size: 14px;
-}
-.ballotBars{
-  display:flex;
-  gap: 6px;
-}
-.ballotBars span{
-  height: 10px;
-  flex: 1 1 auto;
-  border-radius: 999px;
-  background: rgba(255,255,255,.65);
-  border: 1px solid rgba(0,0,0,.10);
+.ballotImage{
+  display:block;
+  width: min(520px, 100%);
+  height: auto;
+  margin: 0 auto;
 }
 
 /* Footer */
