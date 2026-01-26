@@ -1,279 +1,420 @@
-<!doctype html>
-<html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Wählergemeinschaft Rottershausen</title>
-  <meta name="description" content="Wählergemeinschaft Rottershausen – Kandidatinnen und Kandidaten zur Gemeinderatswahl." />
+:root{
+  --red:#e48577;
+  --yellow:#dfad42;
+  --text:#101010;
+  --muted:#4f4f4f;
+  --bg:#ffffff;
+  --card:#f3f3f3;
+  --border:rgba(0,0,0,.12);
+  --radius:22px;
+  --max:1100px;
 
-  <!-- Flyer-Schrift -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  --h1: clamp(26px, 3.2vw, 44px);
+  --h2: clamp(22px, 2.4vw, 34px);
+}
 
-  <link rel="stylesheet" href="styles.css" />
-</head>
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
 
-<body>
-  <!-- HERO (Flyer Seite 1 als Startscreen) -->
-  <header class="hero" id="top">
-    <div class="container heroGrid">
-      <div class="heroLeft">
-        <div class="heroDate">
-          <div class="heroDateBig">8.03.</div>
-          <div class="heroDateBig">2026</div>
-        </div>
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:var(--bg);
+}
 
-        <div class="heroHead">
-          <h1>Wahltag.<br>Ihre Stimme für Rottershausen.</h1>
-          <p class="heroIntro">
-            Sie haben die Möglichkeit, neben dem Landrat und Kreistag auch den neuen
-            <strong>Gemeinderat</strong> und den <strong>Bürgermeister</strong> zu wählen.
-          </p>
-        </div>
+.container{
+  width:min(var(--max), calc(100% - 32px));
+  margin:0 auto;
+}
 
-        <ul class="heroBullets">
-          <li>
-            <span class="bulletIcon" aria-hidden="true">✕</span>
-            <span>Sie entscheiden über die Zukunft unserer Gemeinde in den kommenden 6 Jahren.</span>
-          </li>
-          <li>
-            <span class="bulletIcon" aria-hidden="true">✕</span>
-            <span>Ihre Stimme ist wichtig, denn nur mit Ihrer Hilfe können wir unseren Ort &amp; kleinsten Gemeindeteil angemessen vertreten.</span>
-          </li>
-          <li>
-            <span class="bulletIcon" aria-hidden="true">✕</span>
-            <span>Ihre Stimme trägt bei zu einer verlässlichen, unabhängigen und verantwortungsbewussten Gemeindepolitik.</span>
-          </li>
-        </ul>
-      </div>
+/* HERO */
+.hero{ padding-top: 22px; background: var(--bg); }
 
-      <div class="heroRight" aria-hidden="true">
-        <!-- Spirk-Illustration -->
-        <img class="spirk" src="assets/spirk.svg" alt="">
-      </div>
-    </div>
+.heroGrid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 20px;
+  align-items:end;
+  padding-bottom: 18px;
+}
+@media (max-width: 860px){
+  .heroGrid{ grid-template-columns: 1fr; }
+  .heroRight{ order:-1; justify-content:flex-start; }
+}
 
-    <!-- Rotes Band -->
-    <div class="heroBand">
-      <div class="container heroBandInner">
-        <div class="bandTitle">Wählergemeinschaft<br>Rottershausen</div>
-        <div class="bandSub">Wir Rottershäuserinnen und Rottershäuser müssen zusammenhalten!</div>
-      </div>
-    </div>
-  </header>
+.heroDate{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin-bottom: 10px;
+}
+.heroDateBig{
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  font-size: clamp(46px, 6vw, 86px);
+  line-height: 0.95;
+}
 
-  <main class="container">
-    <!-- Kandidaten-Bereich -->
-    <section class="section" id="kandidaten">
-      <div class="sectionHead">
-        <h2>Für Rottershausen in den Gemeinderat</h2>
-        <p class="sectionLead">
-          Für weitere Informationen zu den Kandidatinnen und Kandidaten klicken Sie auf <strong>Details anzeigen</strong>.
-          <span class="fineNote">(Freiwillige Angaben)</span>
-        </p>
-      </div>
+.heroHead h1{
+  margin: 0 0 10px;
+  font-size: var(--h1);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
-      <div id="grid" class="grid" aria-label="Kandidat:innen"></div>
-    </section>
+.heroIntro{
+  margin: 0 0 16px;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 62ch;
+}
 
-    <!-- UNTERER FLYER-TEIL (ohne Website-Link + ohne Wahlzettel-Kasten) -->
-    <section class="section bottomFlyer" id="wahlhinweise" aria-label="Wahlhinweise und Bürgermeister">
-      <div class="bottomGrid">
-        <!-- Linker Block: Wahlhinweise -->
-        <article class="infoCard">
-          <h3>So wählen Sie</h3>
+.heroBullets{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  max-width: 68ch;
+}
+.heroBullets li{
+  display:flex;
+  gap: 10px;
+  align-items:flex-start;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.bulletIcon{
+  width: 22px;
+  height: 22px;
+  flex:0 0 auto;
+  display:inline-grid;
+  place-items:center;
+  border: 2px solid var(--text);
+  border-radius: 999px;
+  font-weight: 800;
+  line-height: 1;
+  margin-top: 2px;
+}
 
-          <p>
-            Jede Wählerin und jeder Wähler hat <strong>20 Stimmen</strong> für die Gemeinderatswahl zur Verfügung.
-          </p>
+.heroRight{
+  display:flex;
+  justify-content:flex-end;
+}
+.spirk{ width: min(420px, 100%); height: auto; }
 
-          <p>
-            Mit dem Kreuz ganz oben für die <strong>Wählergemeinschaft Rottershausen</strong> erhält
-            jede Kandidatin und jeder Kandidat eine Stimme – die ersten fünf, die doppelt aufgeführt sind,
-            erhalten jeweils zwei Stimmen.
-          </p>
+/* Rotes Band */
+.heroBand{
+  background: var(--red);
+  color: #fff;
+  padding: 18px 0 20px;
+}
+.heroBandInner{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items:end;
+}
+@media (max-width: 860px){
+  .heroBandInner{ grid-template-columns: 1fr; }
+}
+.bandTitle{
+  font-size: clamp(28px, 3.8vw, 52px);
+  line-height: 1.0;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.bandSub{
+  font-size: 15px;
+  line-height: 1.35;
+  opacity: .92;
+}
 
-          <p>
-            Sie können Ihre 20 Stimmen aber auch individuell verteilen. Dabei können Sie jeder Kandidatin bzw.
-            jedem Kandidaten <strong>maximal drei Stimmen</strong> geben – auch den doppelt aufgeführten.
-            Tragen Sie dazu die Zahl <strong>1</strong>, <strong>2</strong> oder <strong>3</strong> in das Kästchen neben dem Namen ein.
-          </p>
+/* SECTION */
+.section{ padding: 28px 0 40px; }
+.sectionHead h2{
+  margin: 0 0 8px;
+  font-size: var(--h2);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.sectionLead{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 15px;
+}
 
-          <p class="warning">
-            <strong>Achtung:</strong> Sie dürfen insgesamt nicht mehr als <strong>20 Stimmen</strong> vergeben!
-          </p>
-        </article>
+/* Hinweis (Freiwillige Angaben) */
+.fineNote{
+  display:inline-block;
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
 
-        <!-- Rechter Block: Nico Rogge (mit Foto) -->
-        <aside class="asideStack">
-          <article class="supportCard" aria-label="Bürgermeister">
-            <p style="margin:0 0 14px; font-size:14px; line-height:1.55;">
-              Bitte unterstützen Sie auch <strong>Nico Rogge</strong>, der in diesem Jahr erneut zur Wahl
-              des ersten Bürgermeisters antritt, mit Ihrer Stimme.
-            </p>
+/* GRID + CARDS */
+.grid{
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (max-width: 960px){
+  .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px){
+  .grid{ grid-template-columns: 1fr; }
+}
 
-            <div class="personLine">
-              <div class="avatarCircle" aria-hidden="true">
-                <!-- Foto-Datei: img/nico.jpg -->
-                <img src="img/nico.jpg" alt="" loading="lazy" onerror="this.remove();">
-                <span class="initials">NR</span>
-              </div>
-              <div>
-                <div class="personName">Nico Rogge</div>
-                <div class="personRole">Erster Bürgermeister<br>Gemeinde Oerlenbach</div>
-              </div>
-            </div>
-          </article>
-        </aside>
-      </div>
-    </section>
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  display:flex;
+  gap: 14px;
+  padding: 14px;
+}
 
-    <!-- WAHLZETTEL AM ENDE -->
-    <section class="section" id="wahlzettel" aria-label="Wahlzettel">
-      <div class="sectionHead" style="margin-bottom:10px;">
-        <h2>Wahlzettel</h2>
-      </div>
+.photoWrap{ flex:0 0 auto; }
+.avatar{
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: #ddd;
+  display:block;
+}
 
-      <figure class="ballotFigure">
-        <!-- Datei im Repo: assets/wahlzettel.png -->
-        <img class="ballotImage" src="assets/wahlzettel.png" alt="Wahlzettel – Wahlvorschlag Nr. 08" loading="lazy">
-      </figure>
-    </section>
-  </main>
+.cardBody{ flex: 1 1 auto; min-width: 0; }
 
-  <footer class="footer">
-    <div class="container footerInner">
-      <span>© <span id="year"></span> Wählergemeinschaft Rottershausen</span>
-      <span class="sep">·</span>
-      <a href="#top">Nach oben</a>
-      <span class="sep">·</span>
-      <a href="impressum.html">Impressum</a>
-      <span class="sep">·</span>
-      <a href="datenschutz.html">Datenschutz</a>
-    </div>
-  </footer>
+.slotPill{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(223,173,66,.20);
+  border: 1px solid rgba(223,173,66,.55);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
 
-  <script>
-    document.getElementById("year").textContent = String(new Date().getFullYear());
+.name{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+}
 
-    function escapeHTML(input) {
-      return String(input ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
+.job{
+  margin: 6px 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.35;
+}
 
-    function nl2brSafe(input) {
-      return escapeHTML(input).replaceAll("\n", "<br>");
-    }
+/* Details */
+.details summary{
+  cursor:pointer;
+  user-select:none;
+  font-weight: 700;
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(223,173,66,.65);
+  background: var(--yellow);
+  color: #111;
+}
+.details summary:hover{ filter: brightness(0.98); }
+.details[open] summary{ margin-bottom: 10px; }
 
-    function hasDetails(c) {
-      return Boolean(
-        c.alter ||
-        (Array.isArray(c.fokusthemen) && c.fokusthemen.length) ||
-        c.ueberMich
-      );
-    }
+.detailsInner{
+  padding: 0 2px 2px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.line{ margin: 0 0 10px; }
 
-    async function loadCandidates() {
-      const grid = document.getElementById("grid");
+.block{ margin-top: 12px; }
+.label{
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+.tags{ display:flex; flex-wrap:wrap; gap: 8px; }
+.tag{
+  display:inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(223,173,66,.65);
+  background: rgba(223,173,66,.18);
+  font-size: 13px;
+}
+.about{ margin:0; }
 
-      try {
-        const res = await fetch("candidates.json", { cache: "no-store" });
-        if (!res.ok) throw new Error("candidates.json nicht gefunden");
-        const data = await res.json();
+/* Text für Listenplatz 15 */
+.restrictedText{
+  margin: 6px 0 0;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text);
+}
 
-        const sorted = (Array.isArray(data) ? data : [])
-          .slice()
-          .sort((a, b) => (a.sortKey ?? 9999) - (b.sortKey ?? 9999));
+/* Bottom flyer section */
+.bottomFlyer{ padding-top: 8px; }
+.bottomGrid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+  align-items:start;
+}
+@media (max-width: 920px){
+  .bottomGrid{ grid-template-columns: 1fr; }
+}
 
-        grid.innerHTML = sorted.map(c => {
-          const listenplatz = escapeHTML(c.listenplatz);
+.infoCard{
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 16px 14px;
+}
+.infoCard h3{
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.infoCard p{
+  margin: 0 0 10px;
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+.warning{
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(228,133,119,.18);
+  border: 1px solid rgba(228,133,119,.35);
+}
 
-          // Sonderfall: Platz 15 -> Bild + Listenplatz + Hinweistext (sonst nichts)
-          if (c.restricted === true) {
-            const photo = escapeHTML(c.photo || "");
-            return `
-              <article class="card restricted">
-                <div class="photoWrap">
-                  ${photo ? `<img class="avatar" src="${photo}" alt="" loading="lazy">` : ""}
-                </div>
+.asideStack{
+  display:flex;
+  flex-direction:column;
+  gap: 16px;
+}
 
-                <div class="cardBody">
-                  <div class="slotPill">Listenplatz ${listenplatz}</div>
-                  <div class="restrictedText">Namentliche Nennung nicht erlaubt</div>
-                </div>
-              </article>
-            `;
-          }
+/* Support card */
+.supportCard{
+  background: rgba(223,173,66,.28);
+  border: 1px solid rgba(223,173,66,.55);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.supportCard p{
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.personLine{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+}
+.avatarCircle{
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  overflow:hidden;
+  border: 1px solid rgba(0,0,0,.15);
+  background: rgba(255,255,255,.55);
+  display:grid;
+  place-items:center;
+  position: relative;
+  flex:0 0 auto;
+}
+.avatarCircle img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+.avatarCircle .initials{
+  font-weight: 800;
+  letter-spacing: .02em;
+  color: rgba(0,0,0,.70);
+}
+.personName{
+  font-weight: 800;
+  font-size: 14px;
+}
+.personRole{
+  color: rgba(0,0,0,.70);
+  font-size: 12px;
+  line-height: 1.25;
+  margin-top: 2px;
+}
 
-          const name = escapeHTML(c.name);
-          const beruf = escapeHTML(c.beruf);
-          const photo = escapeHTML(c.photo);
+/* Wahlzettel */
+.ballotFigure{
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+.ballotImage{
+  display:block;
+  width: min(520px, 100%);
+  height: auto;
+  margin: 0 auto;
+}
 
-          const ageHTML = c.alter
-            ? `<p class="line"><strong>Alter:</strong> ${escapeHTML(c.alter)}</p>`
-            : "";
+/* Footer */
+.footer{
+  border-top: 1px solid var(--border);
+  padding: 18px 0 26px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.footerInner{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.footer a{
+  color: inherit;
+  text-decoration:none;
+  font-weight: 600;
+}
+.footer a:hover{ text-decoration: underline; }
+.sep{ opacity:.65; }
 
-          const themen = Array.isArray(c.fokusthemen) ? c.fokusthemen : [];
-          const tagsHTML = themen.length ? `
-            <div class="block">
-              <div class="label">Fokusthemen</div>
-              <div class="tags">
-                ${themen.map(t => `<span class="tag">${escapeHTML(t)}</span>`).join("")}
-              </div>
-            </div>
-          ` : "";
-
-          const aboutHTML = c.ueberMich ? `
-            <div class="block">
-              <div class="label">Über mich</div>
-              <p class="about">${nl2brSafe(c.ueberMich)}</p>
-            </div>
-          ` : "";
-
-          const detailsHTML = hasDetails(c) ? `
-            <details class="details">
-              <summary>Details anzeigen</summary>
-              <div class="detailsInner">
-                ${ageHTML}
-                ${tagsHTML}
-                ${aboutHTML}
-              </div>
-            </details>
-          ` : "";
-
-          return `
-            <article class="card">
-              <div class="photoWrap">
-                <img class="avatar" src="${photo}" alt="Foto von ${name}" loading="lazy">
-              </div>
-
-              <div class="cardBody">
-                <div class="slotPill">Listenplatz ${listenplatz}</div>
-                <h3 class="name">${name}</h3>
-                <p class="job">${beruf}</p>
-                ${detailsHTML}
-              </div>
-            </article>
-          `;
-        }).join("");
-
-      } catch (err) {
-        grid.innerHTML = `
-          <div class="errorBox">
-            <strong>Fehler:</strong> Kandidaten konnten nicht geladen werden.<br>
-            Prüfe, ob <code>candidates.json</code> im Repo liegt und gültig ist.
-          </div>
-        `;
-        console.error(err);
-      }
-    }
-
-    loadCandidates();
-  </script>
-</body>
-</html>
+.errorBox{
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,.03);
+}
+code{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+}
