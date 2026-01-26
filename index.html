@@ -77,7 +77,7 @@
       <div id="grid" class="grid" aria-label="Kandidat:innen"></div>
     </section>
 
-    <!-- UNTERER FLYER-TEIL (ohne Website-Link + ohne Wahlzettel) -->
+    <!-- UNTERER FLYER-TEIL (ohne Website-Link + ohne Wahlzettel-Kasten) -->
     <section class="section bottomFlyer" id="wahlhinweise" aria-label="Wahlhinweise und Bürgermeister">
       <div class="bottomGrid">
         <!-- Linker Block: Wahlhinweise -->
@@ -127,6 +127,18 @@
           </article>
         </aside>
       </div>
+    </section>
+
+    <!-- WAHLZETTEL AM ENDE -->
+    <section class="section" id="wahlzettel" aria-label="Wahlzettel">
+      <div class="sectionHead" style="margin-bottom:10px;">
+        <h2>Wahlzettel</h2>
+      </div>
+
+      <figure class="ballotFigure">
+        <!-- Datei im Repo: assets/wahlzettel.png -->
+        <img class="ballotImage" src="assets/wahlzettel.png" alt="Wahlzettel – Wahlvorschlag Nr. 08" loading="lazy">
+      </figure>
     </section>
   </main>
 
@@ -192,7 +204,7 @@
 
                 <div class="cardBody">
                   <div class="slotPill">Listenplatz ${listenplatz}</div>
-                  <div class="restrictedText">Namentliche Nennung nicht gewünscht</div>
+                  <div class="restrictedText">Namentliche Nennung nicht erlaubt</div>
                 </div>
               </article>
             `;
