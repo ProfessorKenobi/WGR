@@ -272,9 +272,7 @@ body{
 .about{ margin:0; }
 
 /* Listenplatz 15 */
-.restrictedCard{
-  align-items:center;        /* sieht auf mobile/desktop sauber aus */
-}
+.restrictedCard{ align-items:center; }
 .restrictedText{
   margin: 6px 0 0;
   font-size: 22px;
@@ -283,9 +281,7 @@ body{
   color: var(--text);
 }
 @media (max-width: 560px){
-  .restrictedText{
-    font-size: 20px;
-  }
+  .restrictedText{ font-size: 20px; }
 }
 
 /* Bottom flyer section */
@@ -381,7 +377,7 @@ body{
   margin-top: 2px;
 }
 
-/* Wahlzettel: volle Breite im Container, linksbündig */
+/* Wahlzettel: volle Breite im Container */
 .ballotFigure{
   margin: 0;
   padding: 0;
@@ -394,7 +390,7 @@ body{
   display:block;
   width: 100%;
   height: auto;
-  margin: 0; /* linksbündig */
+  margin: 0;
 }
 
 /* Footer */
@@ -405,6 +401,19 @@ body{
   font-size: 13px;
 }
 .footerInner{
+  display:flex;
+  justify-content:space-between;
+  gap: 14px;
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+.footerCol{
+  display:flex;
+  flex-direction:column;
+  gap: 6px;
+  max-width: 70ch;
+}
+.footerLinks{
   display:flex;
   gap: 10px;
   align-items:center;
