@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wählergemeinschaft Rottershausen</title>
   <meta name="description" content="Wählergemeinschaft Rottershausen – Kandidatinnen und Kandidaten zur Gemeinderatswahl." />
-
-  <!-- Flyer-Schrift -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -120,7 +114,7 @@
       </div>
     </section>
 
-    <!-- Wahlzettel (ohne Überschrift, volle Breite) -->
+    <!-- Wahlzettel (volle Breite) -->
     <section class="section" id="wahlzettel" aria-label="Wahlzettel">
       <figure class="ballotFigure">
         <img class="ballotImage" src="assets/wahlzettel.png" alt="Wahlzettel – Wahlvorschlag Nr. 08" loading="lazy">
@@ -131,14 +125,18 @@
   <footer class="footer">
     <div class="container footerInner">
       <div class="footerCol">
-        <div>© <span id="year"></span> Wählergemeinschaft Rottershausen</div>
-        <div>
-          Fotografien und Design von Marlene Wetterich 
+        <p class="footerP">© <span id="year"></span> Wählergemeinschaft Rottershausen</p>
+
+        <p class="footerP">
+          Fotografien und Design von Marlene Wetterich
           <a href="https://marlenewetterich.de" target="_blank" rel="noopener">marlenewetterich.de</a>
           bzw.
           <a href="http://marlene-photography.de" target="_blank" rel="noopener">marlene-photography.de</a>
-        </div>
-        <div>Erstellung Website durch Matthäus Owczarek auf Basis des Designs von Marlene Wetterich.</div>
+        </p>
+
+        <p class="footerP">
+          Erstellung Website durch Matthäus Owczarek auf Basis des Designs von Marlene Wetterich
+        </p>
       </div>
 
       <div class="footerLinks">
@@ -190,7 +188,6 @@
         grid.innerHTML = sorted.map(c => {
           const listenplatz = escapeHTML(c.listenplatz);
 
-          // Listenplatz 15: Layout wie normale Karte, auch mobil stabil
           if (c.restricted === true) {
             const photo = escapeHTML(c.photo || "");
             return `
